@@ -39,7 +39,7 @@ from bot.helper_funcs.utils import(
 async def incoming_start_message_f(bot, update):
     """/start command"""
     # LOGGER.info(update)
-     await bot.send_message(
+    await bot.send_message(
         chat_id=update.chat.id,
         text=Localisation.START_TEXT.format(update.from_user.first_name),
         reply_markup=InlineKeyboardMarkup(
