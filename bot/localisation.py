@@ -18,7 +18,10 @@ from bot.get_cfg import get_config
 
 
 class Localisation:
-    START_TEXT = "Hello, \n\nThis is a WhiteEye0CompressorBot \n\n<b>Please sent me any Telegram big file I Will compress a small file</b> \n\n/help for more details... \n\nSupport Group :@WhiteEyeBots"
+     START_TEXT = """ <b> Hi {} , I'm A WhiteEye-CompressorBot I Can Compress Your Videos Within Minutes Just Send Me A Video And See The Magic.</b> \n
+<b>Bot Maintained By: [WhiteEyeBots](https://t.me/whiteeyebots)</b> \n
+<b>Do /help for more...</b> \n
+"""
    
     ABS_TEXT = " Please don't be selfish."
     
