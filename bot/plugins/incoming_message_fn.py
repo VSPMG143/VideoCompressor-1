@@ -59,16 +59,29 @@ async def incoming_start_message_f(bot, update):
     
 async def incoming_compress_message_f(bot, update):
   """/compress command"""
-  if update.reply_to_message is None:
-    try:
-      await bot.send_message(
-        chat_id=update.chat.id,
-        text="🤬 Reply to telegram media 🤬",
-        reply_to_message_id=update.message_id
-      )
-    except:
-      pass
-    return
+   if update.from_user.id in Config.BANNED_USERS:
+        await update.reply_text("You are B A N N E D")
+        return
+    TRChatBase(update.from_user.id, update.text, "/compress")
+    update_channel = Config.UPDATE_CHANNEL
+    if update_channel:
+        try:
+            user = await bot.get_chat_member(update_channel, update.chat.id)
+            if user.status == "kicked":
+               await update.reply_text("Sorry But My Devs Has Banned You**")
+               return
+        except UserNotParticipant:
+            #await update.reply_text(f"Join @{update_channel} To Use Me")
+            await update.reply_text(
+                text="**Join My Updates Channel To Use Me**",
+                reply_markup=InlineKeyboardMarkup([
+                    [ InlineKeyboardButton(text="Join My Updates Channel", url=f"https://t.me/{update_channel}")]
+              ])
+            )
+            return
+        except Exception:
+            await update.reply_text("Something Wrong. Contact my Support Group")
+            return
   target_percentage = 50
   isAuto = False
   if len(update.command) > 1:
