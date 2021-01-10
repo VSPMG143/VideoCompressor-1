@@ -35,6 +35,12 @@ from pyrogram import (
 from bot.helper_funcs.utils import(
   delete_downloads
 )
+
+from helper_funcs.chat_base import TRChatBase
+from helper_funcs.display_progress import progress_for_pyrogram
+
+from pyrogram import ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.errors import UserNotParticipant, UserBannedInChannel
         
 async def incoming_start_message_f(bot, update):
     """/start command"""
