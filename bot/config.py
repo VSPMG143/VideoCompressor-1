@@ -9,8 +9,9 @@ class Config(object):
     # The Telegram API things
     APP_ID = int(get_config("APP_ID", 12345))
     API_HASH = get_config("API_HASH")
-     # Get these values from my.telegram.org
+    # Get these values from my.telegram.org
     # array to store the channel ID who are authorized to use the bot
+    BANNED_USERS = []
    
     # the download location, where the HTTP Server runs
     DOWNLOAD_LOCATION = get_config("DOWNLOAD_LOCATION", "/app/DOWNLOADS")
