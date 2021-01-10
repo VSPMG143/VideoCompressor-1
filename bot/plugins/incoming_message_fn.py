@@ -59,9 +59,9 @@ async def incoming_start_message_f(bot, update):
     
 async def incoming_compress_message_f(bot, update):
   """/compress command"""
-   if update.from_user.id in Config.BANNED_USERS:
-        await update.reply_text("You are B A N N E D")
-        return
+    if update.from_user.id in Config.BANNED_USERS:
+       await update.reply_text("You are B A N N E D")
+       return
     TRChatBase(update.from_user.id, update.text, "/compress")
     update_channel = Config.UPDATE_CHANNEL
     if update_channel:
