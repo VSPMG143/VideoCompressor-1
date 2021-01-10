@@ -81,8 +81,8 @@ async def incoming_compress_message_f(bot, update):
         except Exception:
             await update.reply_text("Something Wrong. Contact my Support Group")
             return
-  target_percentage = 50
-  isAuto = False
+            target_percentage = 50
+            isAuto = False
   if len(update.command) > 1:
     try:
       if int(update.command[1]) <= 90 and int(update.command[1]) >= 10:
