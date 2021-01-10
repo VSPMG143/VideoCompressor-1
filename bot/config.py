@@ -4,6 +4,8 @@ from bot.get_cfg import get_config
 class Config(object):
     # get a token from @BotFather
     TG_BOT_TOKEN = get_config("TG_BOT_TOKEN", "")
+    # get a token from https://chatbase.com
+    CHAT_BASE_TOKEN = os.environ.get("CHAT_BASE_TOKEN", "")
     # The Telegram API things
     APP_ID = int(get_config("APP_ID", 12345))
     API_HASH = get_config("API_HASH")
@@ -29,3 +31,4 @@ class Config(object):
     LOG_FILE_ZZGEVC = get_config("LOG_FILE_ZZGEVC", "Log.txt")
       # because, https://t.me/c/1494623325/5603
     SHOULD_USE_BUTTONS = get_config("SHOULD_USE_BUTTONS", False)
+    UPDATE_CHANNEL = os.environ.get("UPDATE_CHANNEL", "WhiteEyeBots")
