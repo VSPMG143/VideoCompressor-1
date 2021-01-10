@@ -35,12 +35,6 @@ from pyrogram import (
 from bot.helper_funcs.utils import(
   delete_downloads
 )
-
-from helper_funcs.chat_base import TRChatBase
-from helper_funcs.display_progress import progress_for_pyrogram
-
-from pyrogram import ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton
-from pyrogram.errors import UserNotParticipant, UserBannedInChannel
         
 async def incoming_start_message_f(bot, update):
     """/start command"""
@@ -55,7 +49,7 @@ async def incoming_start_message_f(bot, update):
                     InlineKeyboardButton('Support Group', url='https://t.me/whiteeyebotschat')
                 ],
                 [
-                    InlineKeyboardButton('WgiteEyeBot-List', url='https://t.me/WhiteEyeBots/5'),
+                    InlineKeyboardButton('WhiteEyeBot-List', url='https://t.me/WhiteEyeBots/5'),
                     InlineKeyboardButton('Devs', url='https://t.me/WhiteEyeDevs')
                 ]
             ]
