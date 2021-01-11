@@ -56,12 +56,11 @@ async def incoming_start_message_f(bot, update):
         ),
         reply_to_message_id=update.message_id
     )
-@pyrogram.Client.on_message(pyrogram.Filters.command(["compress"]))    
+
 async def incoming_compress_message_f(bot, update):
-    if update.from_user.id in Config.BANNED_USERS:
-       await update.reply_text("You are B A N N E D")
-       return
-    TRChatBase(update.from_user.id, update.text, "/compress")
+  """/compress command"""
+
+    TRChatBase(update.from_user.id, update.text, "rename")
     update_channel = Config.UPDATE_CHANNEL
     if update_channel:
         try:
@@ -81,6 +80,18 @@ async def incoming_compress_message_f(bot, update):
         except Exception:
             await update.reply_text("Something Wrong. Contact my Support Group")
             return
+  if update.reply_to_message is None:
+    try:
+      await bot.send_message(
+        chat_id=update.chat.id,
+        text="🤬 Reply to telegram media 🤬",
+        reply_to_message_id=update.message_id
+      )
+    except:
+      pass
+    return
+  target_percentage = 50
+  isAuto = False
   if len(update.command) > 1:
     try:
       if int(update.command[1]) <= 90 and int(update.command[1]) >= 10:
