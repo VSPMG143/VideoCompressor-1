@@ -32,4 +32,4 @@ class Config(object):
     LOG_FILE_ZZGEVC = get_config("LOG_FILE_ZZGEVC", "Log.txt")
       # because, https://t.me/c/1494623325/5603
     SHOULD_USE_BUTTONS = get_config("SHOULD_USE_BUTTONS", False)
-    UPDATE_CHANNEL = get_config("UPDATE_CHANNEL", "WhiteEyeBots")
+    UPDATE_CHANNEL = ("UPDATE_CHANNEL", "WhiteEyeBots")
